@@ -9,6 +9,7 @@ const client = 'ca-pub-5857769079063765';
 const adClass = ['ad-slot', type === 'wide' && 'ad-wide', type === 'box' && 'ad-box'].filter(Boolean).join(' ');
 ---
 <div class={adClass} aria-label={label}>
+  <span class="ad-slot__placeholder" aria-hidden="true">{label}</span>
   <ins
     class="adsbygoogle"
     style="display:block"

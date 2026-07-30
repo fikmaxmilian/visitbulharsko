@@ -35,7 +35,9 @@
   .overlay-body { @apply absolute inset-x-0 bottom-0 z-10 p-5 text-white md:p-6; }
   .overlay-body h3, .overlay-body p { @apply text-white; }
   .overlay-card:hover .overlay-body h3 { @apply text-white underline decoration-white/45 underline-offset-4; }
-  .ad-slot { @apply flex min-h-24 items-center justify-center border border-dashed border-line bg-white p-5 text-center text-xs font-semibold uppercase tracking-[.2em] text-plum/45; }
+  .ad-slot { @apply relative flex min-h-24 items-center justify-center overflow-hidden border border-dashed border-line bg-white p-5 text-center text-xs font-semibold uppercase tracking-[.2em] text-plum/45; }
+  .ad-slot__placeholder { @apply pointer-events-none absolute inset-0 flex items-center justify-center px-4; }
+  .ad-slot .adsbygoogle { @apply relative z-10 w-full; }
   .ad-wide { @apply min-h-32 bg-white text-plum/50; }
   .ad-box { @apply min-h-64; }
   .newsletter-box { @apply border border-line bg-white p-5 shadow-soft md:p-6; }

@@ -94,6 +94,10 @@ const homeSchema = [
       </div>
     </section>
 
+    <div class="mt-8">
+      <AdSlot type="wide" label="ADS banner / horní reklamní zóna" />
+    </div>
+
     <div class="mt-8 border-y border-line py-4 md:py-5">
       <div class="mb-3 flex items-center justify-between gap-4 text-xs font-bold uppercase tracking-[.18em] text-plum/55">
         <span>Zpravodajství</span>
@@ -105,7 +109,10 @@ const homeSchema = [
     </div>
     <div class="mt-6 grid gap-5 lg:grid-cols-[1fr_340px]">
       <PropertyCarousel items={verifiedProperties} />
-      <div id="newsletter" class="newsletter-box"><h2 class="text-2xl font-black">Buďte v obraze</h2><p class="mt-2 text-plum/70">Zaregistrujte se k odběru našeho občasníku.</p><form class="mt-5 grid gap-3 sm:flex"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div>
+      <div class="grid gap-5">
+        <AdSlot type="box" label="ADS box / postranní reklamní zóna" />
+        <div id="newsletter" class="newsletter-box"><h2 class="text-2xl font-black">Buďte v obraze</h2><p class="mt-2 text-plum/70">Zaregistrujte se k odběru našeho občasníku.</p><form class="mt-5 grid gap-3 sm:flex"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div>
+      </div>
     </div>
   </section>
 
@@ -127,6 +134,8 @@ const homeSchema = [
   <section class="section-wrap"><div class="border border-line bg-white p-7 shadow-soft md:flex md:items-center md:justify-between"><div><p class="text-sm font-black uppercase tracking-[.18em] text-rosebrand">Redakce</p><h2 class="mt-2 text-3xl font-black">Pošlete nám článek nebo cestopis</h2><p class="mt-2 text-plum/70">Máte zážitek z Bulharska? Podělte se s ostatními cestovateli.</p></div><a href={withBase('/kontakt/')} class="btn-outline mt-6 inline-block md:mt-0">Poslat článek</a></div></section>
 
   <section class="section-wrap"><div class="section-head"><h2>Kultura a tradice</h2><a href={withBase('/category/kultura-a-tradice/')}>Všechny články →</a></div><div class="grid gap-6 md:grid-cols-2">{culture.map((p) => <PostCard post={p} overlay variant="hero" />)}</div></section>
+
+  <section class="section-wrap"><AdSlot type="wide" label="ADS banner / spodní reklamní zóna" /></section>
 
   <section class="section-wrap"><div class="newsletter-box md:flex md:items-center md:justify-between md:gap-8"><div><MonoIcon name="plane" /><h2 class="mt-2 text-3xl font-black">Zaregistrujte se k odběru</h2><p class="mt-2 text-plum/70">Novinky, tipy a inspirace z Bulharska bez zbytečného spamu.</p></div><form class="mt-6 grid w-full gap-3 sm:flex md:mt-0 md:max-w-md"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div></section>
 </BaseLayout>
