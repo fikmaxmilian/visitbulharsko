@@ -66,7 +66,7 @@
   .property-card h3 { @apply mt-2 text-xl font-black leading-tight md:text-2xl; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .property-card__body > small { @apply mt-3 block text-sm font-semibold text-plum/60; }
   .property-card__body > span { @apply mt-auto inline-block pt-5 text-xs font-black text-plum underline decoration-rosebrand/30 underline-offset-4; }
-  .property-carousel { @apply relative min-h-[560px] overflow-hidden border border-line bg-white shadow-soft md:min-h-[360px]; }
+  .property-carousel { @apply relative min-h-[560px] self-start overflow-hidden border border-line bg-white shadow-soft md:min-h-[360px]; }
   .property-carousel__track { @apply relative min-h-[560px] md:min-h-[360px]; }
   .property-carousel__slide { @apply absolute inset-0 grid grid-rows-[190px_1fr] opacity-0 transition duration-700 md:grid-cols-[1.15fr_.85fr] md:grid-rows-1; }
   .property-carousel__slide.is-active { @apply opacity-100; }
