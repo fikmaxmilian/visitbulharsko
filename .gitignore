@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.log
+data/backups/
+data/output/
+data/source/
+data/property-feed-last.xml
+data/live-news-raw.json

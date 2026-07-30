@@ -1,0 +1,29 @@
+---
+import { withBase } from '../utils/paths';
+import propertyFeed from '../data/property-feed.json';
+
+const properties = ((propertyFeed.items || []) as any[]).filter((p: any) => p.available === true).slice(0, 6);
+const EUR_CZK_RATE = 25;
+const formatCzk = (priceNum?: number) => {
+  if (!priceNum) return '';
+  return `cca ${Math.round(priceNum * EUR_CZK_RATE).toLocaleString('cs-CZ')} Kč`;
+};
+---
+{properties.length > 0 && (
+<section class="section-wrap">
+  <div class="section-head"><h2>Nabídka nemovitostí</h2><a href={withBase('/nemovitosti-bulharsko/')}>Všechny nemovitosti →</a></div>
+  <div class="grid gap-6 md:grid-cols-3">
+    {properties.map((p) => (
+      <a href={p.href} class="property-card" rel="sponsored nofollow">
+        <div class="property-card__image"><img src={p.img} alt={p.title} loading="lazy" decoding="async" width="300" height="200" /></div>
+        <div class="property-card__body">
+          <p><span>{p.price}</span>{formatCzk(p.priceNum) && <small>{formatCzk(p.priceNum)}</small>}</p>
+          <h3>{p.title}</h3>
+          {p.location && <small>{p.location}</small>}
+          <span>PROHLÉDNOUT</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
+)}

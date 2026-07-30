@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+import data from '../data/site-data.json';
+import AdSlot from '../components/AdSlot.astro';
+import { absoluteUrl, canonicalUrl, withBase } from '../utils/paths';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonical?: string;
+  type?: string;
+  schema?: Record<string, any> | Record<string, any>[];
+}
+const {
+  title = 'Visit Bulharsko | Aktuální zprávy z Bulharska',
+  description = 'Cestovatelský magazín, praktické tipy a aktuální zprávy z Bulharska.',
+  image = '/uploads/2023/07/cropped-Visit-Bulharsko-1.webp',
+  canonical = Astro.url.pathname,
+  type = 'website',
+  schema = [],
+} = Astro.props;
+const canonicalHref = canonicalUrl(canonical);
+const absoluteImage = absoluteUrl(image);
+const schemaItems = Array.isArray(schema) ? schema.filter(Boolean) : [schema].filter(Boolean);
+const nav = [
+  { label: 'Zpravodajství', href: '/category/zpravy-bulharsko/' },
+  { label: 'Historie Bulharska', href: '/category/historie-bulharska/' },
+  { label: 'Nejoblíbenější destinace', href: '/category/nejoblibenejsi-destinace/' },
+  { label: 'Nabídka nemovitostí', href: '/nemovitosti-bulharsko/' },
+  { label: 'Tipy na výlety', href: '/category/tipy-na-vylety/' },
+  { label: 'Cestovní průvodce', href: '/category/cestovni-pruvodce/' },
+  { label: 'Kultura a tradice', href: '/category/kultura-a-tradice/' },
+];
+const footerPosts = data.posts.slice(0, 5);
+const today = new Date().toLocaleDateString('cs-CZ', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+const cleanTitle = (value: string) => value.replace(/[\u{1F300}-\u{1FAFF}\u2600-\u27BF\uFE0F]+/gu, '').replace(/\s+/g, ' ').trim();
+const homeUrl = withBase('/');
+---
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalHref} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalHref} />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Visit Bulharsko" />
+    <meta property="og:image" content={absoluteImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImage} />
+    <link rel="icon" href={withBase('/uploads/2023/07/cropped-Visit-Bulharsko-1-157x64.webp')} />
+    {schemaItems.map((item) => <script is:inline type="application/ld+json" set:html={JSON.stringify(item)} />)}
+    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5857769079063765" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-blush text-ink antialiased">
+    <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:p-3" href="#content">Přeskočit na obsah</a>
+    <header class="site-header sticky top-0 z-40 border-b border-line bg-blush shadow-sm md:static md:shadow-none">
+      <div class="hidden bg-ink text-white md:block">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-white/75">
+          <span>Aktuální přehled z Bulharska</span>
+          <span class="normal-case tracking-normal text-white/70">{today}</span>
+        </div>
+      </div>
+      <div class="mx-auto max-w-7xl px-4 py-3 md:px-5 md:py-4">
+        <div class="grid grid-cols-3 items-center gap-3 md:gap-4">
+          <details class="mobile-nav relative md:hidden">
+            <summary aria-label="Otevřít menu" class="flex h-10 w-10 cursor-pointer list-none items-center justify-center border border-line bg-white text-xl text-plum transition hover:border-rosebrand hover:text-rosebrand">
+              <span aria-hidden="true">☰</span>
+            </summary>
+            <nav class="absolute left-0 top-12 w-[min(88vw,320px)] border border-line bg-white p-3 text-sm font-black uppercase tracking-wide text-plum shadow-soft" aria-label="Mobilní navigace webu">
+              {nav.map((n) => <a class="block border-b border-line/70 px-2 py-3 last:border-b-0 hover:text-rosebrand" href={withBase(n.href)}>{n.label}</a>)}
+            </nav>
+          </details>
+          <a href={homeUrl} aria-label="Vyhledávání" class="hidden h-10 w-10 items-center justify-center border border-line bg-blush text-xl text-plum transition hover:border-rosebrand hover:text-rosebrand md:flex">⌕</a>
+          <a href={homeUrl} class="flex justify-center">
+            <img src={withBase('/uploads/2023/07/cropped-Visit-Bulharsko-1.webp')} alt="Visit Bulharsko" class="h-10 w-auto object-contain md:h-16" />
+          </a>
+          <div class="hidden justify-end md:flex"><a href="#newsletter" class="btn-outline">Newsletter</a></div>
+          <a href={homeUrl} aria-label="Vyhledávání" class="ml-auto flex h-10 w-10 items-center justify-center border border-line bg-white text-xl text-plum transition hover:border-rosebrand hover:text-rosebrand md:hidden">⌕</a>
+        </div>
+        <nav class="mt-4 hidden flex-wrap justify-center gap-x-6 gap-y-2 border-y border-line bg-white/45 py-3 text-[13px] font-black uppercase tracking-wide text-plum md:flex md:text-[13px]" aria-label="Hlavní navigace webu">
+          {nav.map((n) => <a class="hover:text-rosebrand" href={withBase(n.href)}>{n.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="mt-16 border-t border-line bg-blush">
+      <div class="mx-auto max-w-7xl px-5 py-12">
+        <div class="grid gap-8 lg:grid-cols-[260px_1fr] lg:items-center">
+          <a href={homeUrl}><img src={withBase('/uploads/2023/07/cropped-Visit-Bulharsko-1.webp')} alt="Visit Bulharsko" class="h-16 w-auto" /></a>
+          <div class="grid gap-4 md:grid-cols-5">
+            {footerPosts.map((p) => <a href={withBase(p.path)} class="group border border-line bg-white p-3 hover:border-rosebrand"><span class="block text-xs font-bold uppercase text-rosebrand">Nově</span><strong class="line-clamp-2 text-sm group-hover:text-rosebrand">{cleanTitle(p.title)}</strong></a>)}
+          </div>
+        </div>
+        <nav class="mt-10 flex flex-wrap gap-5 border-y border-line py-5 text-sm font-semibold text-plum">
+          {nav.map((n) => <a href={withBase(n.href)}>{n.label}</a>)}
+        </nav>
+        <div class="mt-9 grid gap-8 md:grid-cols-4">
+          <div><h3>O nás</h3><p>Visit Bulharsko je český magazín o cestování, kultuře, zprávách a praktickém životě v Bulharsku.</p></div>
+          <div><h3>Kdo jsme</h3><a href={withBase('/o-nas/')}>Kdo jsme?</a><a href={withBase('/kontakt/')}>Kontakt</a><a href={withBase('/inzerce-na-webu/')}>Inzerce na webu</a></div>
+          <div><h3>Povinné odkazy</h3><a href={withBase('/ochrana-osobnich-udaju/')}>Ochrana osobních údajů</a><a href={withBase('/sitemap.xml')}>Sitemap</a></div>
+          <div><h3>Sleduj nás</h3><p>Facebook · Youtube · Instagram</p><div class="mt-4"><AdSlot type="box" label="ADS / reklamní prostor" /></div></div>
+        </div>
+        <p class="mt-10 text-xs text-plum/70">© {new Date().getFullYear()} Visit Bulharsko. Český magazín o cestování, životě a zajímavostech z Bulharska.</p>
+      </div>
+    </footer>
+  </body>
+</html>

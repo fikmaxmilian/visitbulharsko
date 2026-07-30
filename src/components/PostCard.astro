@@ -1,0 +1,23 @@
+---
+import { withBase } from '../utils/paths';
+
+const { post, variant = 'card', overlay = false } = Astro.props;
+const img = post.featured_image || '/uploads/2023/07/header-image-2-1.webp';
+const cat = post.categories?.[0];
+const date = post.date ? new Date(post.date).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }) : '';
+---
+<a href={withBase(post.path)} class:list={['group flex h-full flex-col', !overlay && variant !== 'text' && 'border border-line bg-white', variant === 'compact' && 'compact-card', overlay && 'overlay-card']}>
+  {variant !== 'text' && (
+    <div class="overflow-hidden bg-[#d8d0d2]">
+      <img src={withBase(img)} alt={post.featured_alt || post.title} class:list={['h-52 w-full object-cover transition duration-500 group-hover:scale-105 md:h-56', variant === 'hero' && 'h-[300px] md:h-[330px]', variant === 'mini' && 'h-28']} loading="lazy" />
+    </div>
+  )}
+  <div class:list={[overlay ? 'overlay-body' : variant === 'text' ? 'flex flex-1 flex-col border-b border-line pb-4' : 'flex flex-1 flex-col p-4']}>
+    {cat && variant !== 'text' && <span class="meta-chip">{cat.name}</span>}
+    <h3 class:list={['font-black leading-tight text-ink group-hover:text-rosebrand', variant === 'hero' ? 'mt-3 text-3xl md:text-4xl' : variant === 'mini' ? 'mt-2 text-lg' : 'mt-3 text-xl md:text-2xl']}>{post.title}</h3>
+    <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-plum/60">Luke Palm · {date}</p>
+    {variant === 'hero' && <p class="mt-3 line-clamp-2 text-sm leading-6 text-white/85">{post.excerpt}</p>}
+    {variant !== 'mini' && variant !== 'hero' && <p class="mt-3 line-clamp-3 text-sm leading-6 text-plum/75">{post.excerpt}</p>}
+    {variant !== 'mini' && <span class:list={['mt-auto inline-block pt-4 text-sm font-bold', overlay ? 'text-white underline decoration-white/45 underline-offset-4' : 'text-plum']}>Číst →</span>}
+  </div>
+</a>

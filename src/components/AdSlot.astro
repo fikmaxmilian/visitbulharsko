@@ -1,0 +1,24 @@
+---
+const {
+  label = 'ADS / reklamní prostor',
+  type = 'banner',
+  slot = '',
+} = Astro.props;
+
+const client = 'ca-pub-5857769079063765';
+const adClass = ['ad-slot', type === 'wide' && 'ad-wide', type === 'box' && 'ad-box'].filter(Boolean).join(' ');
+---
+<div class={adClass} aria-label={label}>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client={client}
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+    {...(slot ? { 'data-ad-slot': slot } : {})}
+  ></ins>
+  <script is:inline>
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  <noscript><span>{label}</span></noscript>
+</div>

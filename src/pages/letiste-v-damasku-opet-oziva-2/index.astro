@@ -1,0 +1,19 @@
+---
+const target = '/letiste-v-damasku-opet-oziva/';
+const absoluteTarget = 'https://visitbulharsko.cz/letiste-v-damasku-opet-oziva/';
+Astro.response.headers.set('Location', target);
+Astro.response.status = 301;
+---
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href={absoluteTarget} />
+    <title>Přesměrování | Visit Bulharsko</title>
+  </head>
+  <body>
+    <p>Stránka byla přesunuta na <a href={target}>Letiště v Damašku opět ožívá</a>.</p>
+  </body>
+</html>

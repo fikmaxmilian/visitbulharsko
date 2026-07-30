@@ -1,0 +1,111 @@
+{
+  "generatedAt": "2026-07-30T06:00:47.052882+00:00",
+  "mode": "fast-news-drafts",
+  "policy": "External RSS is used only as source material. Publish short Czech own-words fast news with clear travel impact. No FAQ or mandatory image for fast updates.",
+  "items": [
+    {
+      "source": "Novinite / Sofia News Agency",
+      "sourceUrl": "https://www.novinite.com/services/news_rdf.php",
+      "category": "zpravy-bulharsko",
+      "language": "en",
+      "status": "draft",
+      "copyPolicy": "own-words-summary-only",
+      "title": "Bus Crashes Through Barrier on Sofia Boulevard, Injuring Four and Disrupting Traffic",
+      "excerpt": "Four people were injured after a public transport bus crashed through a guardrail and crossed into oncoming traffic on Tsarigradsko Shose Boulevard in Sofia on Monday, temporarily blocking one of the capital's busiest ro",
+      "originalTitle": "Bus Crashes Through Barrier on Sofia Boulevard, Injuring Four and Disrupting Traffic",
+      "originalExcerpt": "Four people were injured after a public transport bus crashed through a guardrail and crossed into oncoming traffic on Tsarigradsko Shose Boulevard in Sofia on Monday, temporarily blocking one of the capital's busiest roads. The Route 204 bus, which was traveling from the Mladost district toward Orlov Most, broke through the central barrier near the Fourth Kilometer interchange. Concrete safety barriers prevented the vehicle from plunging off the overpass. ...",
+      "link": "https://www.novinite.com/view_news.php?id=239842",
+      "published": "2026-07-28T10:16:08+02:00",
+      "guid": "239842",
+      "relevanceScore": 8,
+      "relevanceKeywords": [
+        "sofia",
+        "traffic",
+        "bus"
+      ],
+      "excludedSignals": [],
+      "editorialAngle": "praktická aktualita",
+      "fastNewsDraft": {
+        "decision": "draft",
+        "slug": "",
+        "seoTitle": "",
+        "metaDescription": "",
+        "h1": "",
+        "excerpt": "",
+        "articleHtml": "",
+        "sourceCredit": "Zdroj: Novinite / Sofia News Agency",
+        "sourceUrl": "https://www.novinite.com/view_news.php?id=239842"
+      },
+      "rewritePrompt": "Vytvoř z podkladu vlastní českou rychlou zprávu pro Visit Bulharsko. Nekopíruj formulace ze zdroje a nepřekládej větu po větě. Piš vlastními slovy, věcně a stručně. Zaměř se jen na dopad pro české cestovatele, turistické lokality, dopravu, počasí, bezpečnost, pobřeží nebo pravidla cestování. Pokud zpráva nemá jasný cestovatelský dopad, označ ji jako NEPUBLIKOVAT. FAQ ani obrázek nevytvářej — jde o rychlou aktuální zprávu.\n\nPovinný výstup ve struktuře JSON:\n{\n  \"decision\": \"publish|skip\",\n  \"slug\": \"kratky-url-slug\",\n  \"seoTitle\": \"max 60 znaků\",\n  \"metaDescription\": \"max 155 znaků\",\n  \"h1\": \"český titulek\",\n  \"excerpt\": \"1–2 věty pro homepage\",\n  \"articleHtml\": \"rychlá zpráva 180–350 slov: úvod + Co se stalo + Co to znamená pro cestovatele\",\n  \"sourceCredit\": \"Zdroj: název média\",\n  \"sourceUrl\": \"původní URL\"\n}\n\nObsahová pravidla: žádné FAQ, žádný povinný obrázek, žádná výplň. Musí být jasné, proč je zpráva relevantní pro cestování.\n\nZdroj: Novinite / Sofia News Agency\nPůvodní titulek: Bus Crashes Through Barrier on Sofia Boulevard, Injuring Four and Disrupting Traffic\nPodklad: Four people were injured after a public transport bus crashed through a guardrail and crossed into oncoming traffic on Tsarigradsko Shose Boulevard in Sofia on Monday, temporarily blocking one of the capital's busiest roads. The Route 204 bus, which was traveling from the Mladost district toward Orlov Most, broke through the central barrier near the Fourth Kilometer interchange. Concrete safety barriers prevented the vehicle from plunging off the overpass. ...\nOdkaz: https://www.novinite.com/view_news.php?id=239842"
+    },
+    {
+      "source": "The Sofia Globe",
+      "sourceUrl": "https://sofiaglobe.com/feed/",
+      "category": "zpravy-bulharsko",
+      "language": "en",
+      "status": "draft",
+      "copyPolicy": "own-words-summary-only",
+      "title": "Bulgaria issues weather warnings for July 9 over forecast high temperatures, strong winds",
+      "excerpt": "Bulgaria’s national meteorological bureau has issued the Code Orange warning of dangerous weather for several districts for July 9 because",
+      "originalTitle": "Bulgaria issues weather warnings for July 9 over forecast high temperatures, strong winds",
+      "originalExcerpt": "Bulgaria’s national meteorological bureau has issued the Code Orange warning of dangerous weather for several districts for July 9 because",
+      "link": "https://sofiaglobe.com/2025/07/08/bulgaria-issues-weather-warnings-for-july-9-over-forecast-high-temperatures-strong-winds/",
+      "published": "2025-07-08T11:15:33+00:00",
+      "guid": "https://sofiaglobe.com/?p=124155",
+      "relevanceScore": 10,
+      "relevanceKeywords": [
+        "weather",
+        "warning"
+      ],
+      "excludedSignals": [],
+      "editorialAngle": "počasí / bezpečnost",
+      "fastNewsDraft": {
+        "decision": "draft",
+        "slug": "",
+        "seoTitle": "",
+        "metaDescription": "",
+        "h1": "",
+        "excerpt": "",
+        "articleHtml": "",
+        "sourceCredit": "Zdroj: The Sofia Globe",
+        "sourceUrl": "https://sofiaglobe.com/2025/07/08/bulgaria-issues-weather-warnings-for-july-9-over-forecast-high-temperatures-strong-winds/"
+      },
+      "rewritePrompt": "Vytvoř z podkladu vlastní českou rychlou zprávu pro Visit Bulharsko. Nekopíruj formulace ze zdroje a nepřekládej větu po větě. Piš vlastními slovy, věcně a stručně. Zaměř se jen na dopad pro české cestovatele, turistické lokality, dopravu, počasí, bezpečnost, pobřeží nebo pravidla cestování. Pokud zpráva nemá jasný cestovatelský dopad, označ ji jako NEPUBLIKOVAT. FAQ ani obrázek nevytvářej — jde o rychlou aktuální zprávu.\n\nPovinný výstup ve struktuře JSON:\n{\n  \"decision\": \"publish|skip\",\n  \"slug\": \"kratky-url-slug\",\n  \"seoTitle\": \"max 60 znaků\",\n  \"metaDescription\": \"max 155 znaků\",\n  \"h1\": \"český titulek\",\n  \"excerpt\": \"1–2 věty pro homepage\",\n  \"articleHtml\": \"rychlá zpráva 180–350 slov: úvod + Co se stalo + Co to znamená pro cestovatele\",\n  \"sourceCredit\": \"Zdroj: název média\",\n  \"sourceUrl\": \"původní URL\"\n}\n\nObsahová pravidla: žádné FAQ, žádný povinný obrázek, žádná výplň. Musí být jasné, proč je zpráva relevantní pro cestování.\n\nZdroj: The Sofia Globe\nPůvodní titulek: Bulgaria issues weather warnings for July 9 over forecast high temperatures, strong winds\nPodklad: Bulgaria’s national meteorological bureau has issued the Code Orange warning of dangerous weather for several districts for July 9 because\nOdkaz: https://sofiaglobe.com/2025/07/08/bulgaria-issues-weather-warnings-for-july-9-over-forecast-high-temperatures-strong-winds/"
+    },
+    {
+      "source": "The Sofia Globe",
+      "sourceUrl": "https://sofiaglobe.com/feed/",
+      "category": "zpravy-bulharsko",
+      "language": "en",
+      "status": "draft",
+      "copyPolicy": "own-words-summary-only",
+      "title": "Bulgaria issues weather warnings over scorching temperatures forecast for July 8",
+      "excerpt": "For a third consecutive day, Bulgaria’s national meteorological bureau has issued the Code Orange warning of dangerous weather for most",
+      "originalTitle": "Bulgaria issues weather warnings over scorching temperatures forecast for July 8",
+      "originalExcerpt": "For a third consecutive day, Bulgaria’s national meteorological bureau has issued the Code Orange warning of dangerous weather for most",
+      "link": "https://sofiaglobe.com/2025/07/07/bulgaria-issues-weather-warnings-over-scorching-temperatures-forecast-for-july-8/",
+      "published": "2025-07-07T10:10:11+00:00",
+      "guid": "https://sofiaglobe.com/?p=124143",
+      "relevanceScore": 10,
+      "relevanceKeywords": [
+        "weather",
+        "warning"
+      ],
+      "excludedSignals": [],
+      "editorialAngle": "počasí / bezpečnost",
+      "fastNewsDraft": {
+        "decision": "draft",
+        "slug": "",
+        "seoTitle": "",
+        "metaDescription": "",
+        "h1": "",
+        "excerpt": "",
+        "articleHtml": "",
+        "sourceCredit": "Zdroj: The Sofia Globe",
+        "sourceUrl": "https://sofiaglobe.com/2025/07/07/bulgaria-issues-weather-warnings-over-scorching-temperatures-forecast-for-july-8/"
+      },
+      "rewritePrompt": "Vytvoř z podkladu vlastní českou rychlou zprávu pro Visit Bulharsko. Nekopíruj formulace ze zdroje a nepřekládej větu po větě. Piš vlastními slovy, věcně a stručně. Zaměř se jen na dopad pro české cestovatele, turistické lokality, dopravu, počasí, bezpečnost, pobřeží nebo pravidla cestování. Pokud zpráva nemá jasný cestovatelský dopad, označ ji jako NEPUBLIKOVAT. FAQ ani obrázek nevytvářej — jde o rychlou aktuální zprávu.\n\nPovinný výstup ve struktuře JSON:\n{\n  \"decision\": \"publish|skip\",\n  \"slug\": \"kratky-url-slug\",\n  \"seoTitle\": \"max 60 znaků\",\n  \"metaDescription\": \"max 155 znaků\",\n  \"h1\": \"český titulek\",\n  \"excerpt\": \"1–2 věty pro homepage\",\n  \"articleHtml\": \"rychlá zpráva 180–350 slov: úvod + Co se stalo + Co to znamená pro cestovatele\",\n  \"sourceCredit\": \"Zdroj: název média\",\n  \"sourceUrl\": \"původní URL\"\n}\n\nObsahová pravidla: žádné FAQ, žádný povinný obrázek, žádná výplň. Musí být jasné, proč je zpráva relevantní pro cestování.\n\nZdroj: The Sofia Globe\nPůvodní titulek: Bulgaria issues weather warnings over scorching temperatures forecast for July 8\nPodklad: For a third consecutive day, Bulgaria’s national meteorological bureau has issued the Code Orange warning of dangerous weather for most\nOdkaz: https://sofiaglobe.com/2025/07/07/bulgaria-issues-weather-warnings-over-scorching-temperatures-forecast-for-july-8/"
+    }
+  ],
+  "errors": []
+}

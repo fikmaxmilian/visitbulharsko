@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import { withBase } from '../../../utils/paths';
+import data from '../../../data/site-data.json';
+const posts = data.posts.slice(24, 72);
+---
+<BaseLayout title="Archiv článků o Bulharsku | Visit Bulharsko" description="Archiv článků Visit Bulharsko: starší zprávy, cestovní tipy, průvodce, destinace a praktické informace pro české cestovatele do Bulharska." canonical="/page/2/">
+  <section class="mx-auto max-w-7xl px-5 pt-12">
+    <div class="section-head"><h1 class="font-display text-5xl font-black">Archiv článků</h1><a href={withBase('/')}>Novější články →</a></div>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">{posts.map((p: any) => <PostCard post={p} />)}</div>
+  </section>
+</BaseLayout>

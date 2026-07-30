@@ -1,0 +1,24 @@
+
+---Upload files---
+Widget file was not uploaded. Error: No file provided.
+
+---Upload files---
+Redux file was not uploaded. Error: No file provided.
+
+---Upload files---
+The import files were successfully uploaded!
+Initial max execution time = 90
+Files info:
+Site URL = https://visitbulharsko.cz
+Data file = D:\Sites\web_756869490238039615699412\www/wp-content/uploads/2023/07/writers-blogily-xml-1.xml
+Widget file = not defined!
+Customizer file = D:\Sites\web_756869490238039615699412\www/wp-content/uploads/2023/07/writers-blogily-dat-1.dat
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+---Importing customizer settings---
+Customizer settings import finished!

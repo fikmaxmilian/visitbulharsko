@@ -1,0 +1,20 @@
+{
+  "name": "visitbulharsko-astro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro check && astro build",
+    "preview": "astro preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "@astrojs/tailwind": "latest",
+    "astro": "latest",
+    "sharp": "latest",
+    "tailwindcss": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {}
+}

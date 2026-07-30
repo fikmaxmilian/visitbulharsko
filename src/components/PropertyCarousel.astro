@@ -1,0 +1,64 @@
+---
+const { items = [] } = Astro.props;
+const properties = items.filter((p: any) => p.available === true).slice(0, 8);
+const EUR_CZK_RATE = 25;
+const formatCzk = (priceNum?: number) => {
+  if (!priceNum) return '';
+  return `cca ${Math.round(priceNum * EUR_CZK_RATE).toLocaleString('cs-CZ')} Kč`;
+};
+---
+<section class="property-carousel" data-property-carousel>
+  {properties.length > 0 ? (
+    <>
+      <div class="property-carousel__track">
+        {properties.map((p: any, index: number) => (
+          <a href={p.href} rel="sponsored nofollow" class:list={['property-carousel__slide', index === 0 && 'is-active']} data-property-slide>
+            <div class="property-carousel__content">
+              <p class="property-eyebrow">Ověřená nabídka</p>
+              <h2>{p.title}</h2>
+              <div class="property-meta-row">
+                <strong><span>{p.price}</span>{formatCzk(p.priceNum) && <small>{formatCzk(p.priceNum)}</small>}</strong>
+                {p.location && <span>{p.location}</span>}
+              </div>
+              <span class="property-cta">PROHLÉDNOUT NEMOVITOST</span>
+            </div>
+            <div class="property-carousel__image"><img src={p.img} alt={p.title} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" /></div>
+          </a>
+        ))}
+      </div>
+      <div class="property-carousel__dots" aria-hidden="true">
+        {properties.map((_: any, index: number) => <span class:list={[index === 0 && 'is-active']} data-property-dot></span>)}
+      </div>
+    </>
+  ) : (
+    <a href="https://www.mojenemovitostumore.cz/nemovitosti?country_id=146&relation_type=1&do=advertList-searchForm-submit&aff=l4todz91fb" rel="sponsored nofollow" class="property-carousel__empty">
+      <div>
+        <p class="property-eyebrow">Nabídka nemovitostí</p>
+        <h2>Aktuální apartmány a domy v Bulharsku</h2>
+        <p>Konkrétní nabídky zobrazíme až po ověření dostupnosti, aby na webu nebyly prodané nebo stažené nemovitosti.</p>
+        <span class="property-cta">ZOBRAZIT AKTUÁLNÍ NABÍDKY</span>
+      </div>
+    </a>
+  )}
+</section>
+
+{properties.length > 1 && (
+<script is:inline>
+  (() => {
+    const root = document.querySelector('[data-property-carousel]');
+    if (!root) return;
+    const slides = Array.from(root.querySelectorAll('[data-property-slide]'));
+    const dots = Array.from(root.querySelectorAll('[data-property-dot]'));
+    if (slides.length < 2) return;
+    let index = 0;
+    const setActive = (next) => {
+      slides[index].classList.remove('is-active');
+      dots[index]?.classList.remove('is-active');
+      index = next % slides.length;
+      slides[index].classList.add('is-active');
+      dots[index]?.classList.add('is-active');
+    };
+    window.setInterval(() => setActive(index + 1), 5000);
+  })();
+</script>
+)}

@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import { absoluteUrl, canonicalUrl, withBase } from '../../utils/paths';
+import data from '../../data/site-data.json';
+
+export function getStaticPaths() {
+  return [...data.posts, ...data.pages]
+    .filter((p) => p.path !== '/')
+    .map((p) => ({ params: { slug: p.slug }, props: { item: p } }));
+}
+const { item } = Astro.props;
+const related = data.posts.filter((p: any) => p.slug !== item.slug && p.categories?.some((c: any) => item.categories?.some((ic: any) => ic.slug === c.slug))).slice(0,3);
+const title = item.seo?.title || item.title;
+const description = item.seo?.description || item.excerpt || 'Visit Bulharsko';
+const date = item.date ? new Date(item.date).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+const strippedContent = (item.content || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Visit Bulharsko', item: canonicalUrl('/') },
+    ...(item.categories?.[0] ? [{ '@type': 'ListItem', position: 2, name: item.categories[0].name, item: canonicalUrl(`/category/${item.categories[0].slug}/`) }] : []),
+    { '@type': 'ListItem', position: item.categories?.[0] ? 3 : 2, name: item.title, item: canonicalUrl(item.path) },
+  ],
+};
+const articleSchema = item.type === 'post' ? {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: item.title,
+  description,
+  image: item.featured_image ? [absoluteUrl(item.featured_image)] : undefined,
+  datePublished: item.date,
+  dateModified: item.modified || item.date,
+  author: { '@type': 'Person', name: 'Luke Palm' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Visit Bulharsko',
+    logo: { '@type': 'ImageObject', url: absoluteUrl('/uploads/2023/07/cropped-Visit-Bulharsko-1.webp') },
+  },
+  mainEntityOfPage: canonicalUrl(item.path),
+  articleSection: item.categories?.[0]?.name,
+  wordCount: strippedContent.split(/\s+/).filter(Boolean).length,
+} : null;
+const pageSchema = item.type !== 'post' ? {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: item.title,
+  description,
+  url: canonicalUrl(item.path),
+  inLanguage: 'cs-CZ',
+  isPartOf: { '@type': 'WebSite', name: 'Visit Bulharsko', url: canonicalUrl('/') },
+} : null;
+---
+<BaseLayout title={title} description={description} image={item.featured_image || undefined} canonical={item.path} type={item.type === 'post' ? 'article' : 'website'} schema={[articleSchema, pageSchema, breadcrumbs]}>
+  <article class="mx-auto max-w-4xl px-5 pt-12">
+    <div class="text-center">
+      {item.categories?.[0] && <a href={`/category/${item.categories[0].slug}/`} class="meta-chip">{item.categories[0].name}</a>}
+      <h1 class="mt-5 font-display text-4xl font-black leading-tight md:text-6xl">{item.title}</h1>
+      {item.type === 'post' && <p class="mt-4 text-sm font-semibold uppercase tracking-wide text-plum/60">Luke Palm · {date} · {item.reading_minutes} min čtení</p>}
+      {item.excerpt && <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-plum/75">{item.excerpt}</p>}
+    </div>
+    {item.featured_image && <img src={withBase(item.featured_image)} alt={item.featured_alt || item.title} class="mt-10 max-h-[560px] w-full rounded-[2rem] object-cover shadow-soft" />}
+    <div class="my-10"><AdSlot label="ADS / reklamní prostor v článku" /></div>
+    <div class="article-content" set:html={item.content}></div>
+  </article>
+  {item.type === 'post' && (
+    <section class="section-wrap"><div class="section-head"><h2>Související články</h2><a href={withBase('/')}>Zpět na magazín →</a></div><div class="grid gap-8 md:grid-cols-3">{related.map((p) => <PostCard post={p} />)}</div></section>
+  )}
+</BaseLayout>
