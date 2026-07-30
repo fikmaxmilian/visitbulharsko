@@ -4,6 +4,7 @@ import PostCard from '../components/PostCard.astro';
 import AdSlot from '../components/AdSlot.astro';
 import PropertyBlock from '../components/PropertyBlock.astro';
 import PropertyCarousel from '../components/PropertyCarousel.astro';
+import MonoIcon from '../components/MonoIcon.astro';
 import data from '../data/site-data.json';
 import { absoluteUrl, canonicalUrl, withBase } from '../utils/paths';
 import propertyFeed from '../data/property-feed.json';
@@ -71,22 +72,22 @@ const homeSchema = [
       </div>
       <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <a href={withBase('/category/cestovni-pruvodce/')} class="rounded-[1.25rem] border border-line bg-blush/60 p-5 transition hover:-translate-y-0.5 hover:shadow-soft">
-          <span class="text-2xl">🧭</span>
+          <MonoIcon name="compass" />
           <h3 class="mt-3 text-lg font-black">Plánuji cestu</h3>
           <p class="mt-2 text-sm text-plum/65">Doklady, doprava, letiště, počasí a základní orientace.</p>
         </a>
         <a href={withBase('/category/nejoblibenejsi-destinace/')} class="rounded-[1.25rem] border border-line bg-blush/60 p-5 transition hover:-translate-y-0.5 hover:shadow-soft">
-          <span class="text-2xl">🏖️</span>
+          <MonoIcon name="beach" />
           <h3 class="mt-3 text-lg font-black">Hledám destinaci</h3>
           <p class="mt-2 text-sm text-plum/65">Letoviska, pláže, města a místa, kam se vydat.</p>
         </a>
         <a href={withBase('/category/tipy-na-vylety/')} class="rounded-[1.25rem] border border-line bg-blush/60 p-5 transition hover:-translate-y-0.5 hover:shadow-soft">
-          <span class="text-2xl">📍</span>
+          <MonoIcon name="pin" />
           <h3 class="mt-3 text-lg font-black">Chci na výlet</h3>
           <p class="mt-2 text-sm text-plum/65">Památky, příroda a inspirace mimo hotelový bazén.</p>
         </a>
         <a href={withBase('/category/zpravy-bulharsko/')} class="rounded-[1.25rem] border border-line bg-blush/60 p-5 transition hover:-translate-y-0.5 hover:shadow-soft">
-          <span class="text-2xl">📰</span>
+          <MonoIcon name="news" />
           <h3 class="mt-3 text-lg font-black">Sleduji novinky</h3>
           <p class="mt-2 text-sm text-plum/65">Aktuální počasí, doprava, události a cestovní dopady.</p>
         </a>
@@ -127,5 +128,5 @@ const homeSchema = [
 
   <section class="section-wrap"><div class="section-head"><h2>Kultura a tradice</h2><a href={withBase('/category/kultura-a-tradice/')}>Všechny články →</a></div><div class="grid gap-6 md:grid-cols-2">{culture.map((p) => <PostCard post={p} overlay variant="hero" />)}</div></section>
 
-  <section class="section-wrap"><div class="newsletter-box md:flex md:items-center md:justify-between md:gap-8"><div><p class="text-4xl">✈</p><h2 class="mt-2 text-3xl font-black">Zaregistrujte se k odběru</h2><p class="mt-2 text-plum/70">Novinky, tipy a inspirace z Bulharska bez zbytečného spamu.</p></div><form class="mt-6 grid w-full gap-3 sm:flex md:mt-0 md:max-w-md"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div></section>
+  <section class="section-wrap"><div class="newsletter-box md:flex md:items-center md:justify-between md:gap-8"><div><MonoIcon name="plane" /><h2 class="mt-2 text-3xl font-black">Zaregistrujte se k odběru</h2><p class="mt-2 text-plum/70">Novinky, tipy a inspirace z Bulharska bez zbytečného spamu.</p></div><form class="mt-6 grid w-full gap-3 sm:flex md:mt-0 md:max-w-md"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div></section>
 </BaseLayout>

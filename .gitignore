@@ -11,4 +11,7 @@ build/
 data/backups/
 data/output/
 data/source/
+data/content/
+data/property-feed-last.xml
+data/live-news-raw.json
 *.tmp.*

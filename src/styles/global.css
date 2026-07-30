@@ -41,6 +41,13 @@
   .newsletter-box { @apply border border-line bg-white p-5 shadow-soft md:p-6; }
   .newsletter-input { @apply w-full border border-line bg-blush px-4 py-3 outline-none focus:border-rosebrand; }
   .newsletter-btn { @apply bg-ink px-5 py-3 font-semibold text-white hover:bg-rosebrand; }
+  .mono-icon { @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-rosebrand/25 bg-white text-rosebrand shadow-sm; }
+  .mono-icon svg { @apply h-6 w-6; }
+  .newsletter-box .mono-icon { @apply mb-3 h-12 w-12 border-white/40 bg-white/15 text-white shadow-none; }
+  .menu-icon { @apply flex h-4 w-5 flex-col justify-between; }
+  .menu-icon span { @apply block h-0.5 w-full bg-current; }
+  .search-icon { @apply relative block h-4 w-4 rounded-full border-2 border-current; }
+  .search-icon::after { content: ''; @apply absolute -bottom-1 -right-1 h-2 w-0.5 rotate-[-45deg] bg-current; }
   .property-card { @apply flex h-full flex-col overflow-hidden border border-line bg-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-xl; }
   .property-card__image { @apply relative overflow-hidden border-b border-line bg-blush p-0; }
   .property-card__image::after { content: 'OVĚŘENO'; @apply absolute left-3 top-3 max-w-[calc(100%-1.5rem)] whitespace-normal bg-white/90 px-3 py-1 text-[10px] font-black uppercase tracking-normal text-plum; }

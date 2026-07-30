@@ -72,18 +72,18 @@ const homeUrl = withBase('/');
         <div class="grid grid-cols-3 items-center gap-3 md:gap-4">
           <details class="mobile-nav relative md:hidden">
             <summary aria-label="Otevřít menu" class="flex h-10 w-10 cursor-pointer list-none items-center justify-center border border-line bg-white text-xl text-plum transition hover:border-rosebrand hover:text-rosebrand">
-              <span aria-hidden="true">☰</span>
+              <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
             </summary>
             <nav class="absolute left-0 top-12 w-[min(88vw,320px)] border border-line bg-white p-3 text-sm font-black uppercase tracking-wide text-plum shadow-soft" aria-label="Mobilní navigace webu">
               {nav.map((n) => <a class="block border-b border-line/70 px-2 py-3 last:border-b-0 hover:text-rosebrand" href={withBase(n.href)}>{n.label}</a>)}
             </nav>
           </details>
-          <a href={homeUrl} aria-label="Vyhledávání" class="hidden h-10 w-10 items-center justify-center border border-line bg-blush text-xl text-plum transition hover:border-rosebrand hover:text-rosebrand md:flex">⌕</a>
+          <a href={homeUrl} aria-label="Vyhledávání" class="hidden h-10 w-10 items-center justify-center border border-line bg-blush text-plum transition hover:border-rosebrand hover:text-rosebrand md:flex"><span class="search-icon" aria-hidden="true"></span></a>
           <a href={homeUrl} class="flex justify-center">
             <img src={withBase('/uploads/2023/07/cropped-Visit-Bulharsko-1.webp')} alt="Visit Bulharsko" class="h-10 w-auto object-contain md:h-16" />
           </a>
           <div class="hidden justify-end md:flex"><a href="#newsletter" class="btn-outline">Newsletter</a></div>
-          <a href={homeUrl} aria-label="Vyhledávání" class="ml-auto flex h-10 w-10 items-center justify-center border border-line bg-white text-xl text-plum transition hover:border-rosebrand hover:text-rosebrand md:hidden">⌕</a>
+          <a href={homeUrl} aria-label="Vyhledávání" class="ml-auto flex h-10 w-10 items-center justify-center border border-line bg-white text-plum transition hover:border-rosebrand hover:text-rosebrand md:hidden"><span class="search-icon" aria-hidden="true"></span></a>
         </div>
         <nav class="mt-4 hidden flex-wrap justify-center gap-x-6 gap-y-2 border-y border-line bg-white/45 py-3 text-[13px] font-black uppercase tracking-wide text-plum md:flex md:text-[13px]" aria-label="Hlavní navigace webu">
           {nav.map((n) => <a class="hover:text-rosebrand" href={withBase(n.href)}>{n.label}</a>)}
