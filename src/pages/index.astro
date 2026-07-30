@@ -109,10 +109,7 @@ const homeSchema = [
     </div>
     <div class="mt-6 grid gap-5 lg:grid-cols-[1fr_340px]">
       <PropertyCarousel items={verifiedProperties} />
-      <div class="grid gap-5">
-        <AdSlot type="box" label="ADS box / postranní reklamní zóna" />
-        <div id="newsletter" class="newsletter-box"><h2 class="text-2xl font-black">Buďte v obraze</h2><p class="mt-2 text-plum/70">Zaregistrujte se k odběru našeho občasníku.</p><form class="mt-5 grid gap-3 sm:flex"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div>
-      </div>
+      <AdSlot type="box" label="ADS box / postranní reklamní zóna" />
     </div>
   </section>
 
@@ -137,5 +134,4 @@ const homeSchema = [
 
   <section class="section-wrap"><AdSlot type="wide" label="ADS banner / spodní reklamní zóna" /></section>
 
-  <section class="section-wrap"><div class="newsletter-box md:flex md:items-center md:justify-between md:gap-8"><div><MonoIcon name="plane" /><h2 class="mt-2 text-3xl font-black">Zaregistrujte se k odběru</h2><p class="mt-2 text-plum/70">Novinky, tipy a inspirace z Bulharska bez zbytečného spamu.</p></div><form class="mt-6 grid w-full gap-3 sm:flex md:mt-0 md:max-w-md"><input class="newsletter-input" placeholder="E-mail" type="email"/><button class="newsletter-btn">Odeslat</button></form></div></section>
 </BaseLayout>

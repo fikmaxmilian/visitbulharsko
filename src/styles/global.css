@@ -25,9 +25,9 @@
   .latest-strip__button { @apply shrink-0 bg-ink px-3 py-1.5 text-xs font-black uppercase tracking-wide text-white transition hover:bg-rosebrand; }
   .home-news-grid { @apply gap-3 border-0 bg-transparent md:gap-px md:border md:bg-line; }
   .home-news-grid > a { @apply bg-white px-0 py-0; }
-  .home-news-grid > a > div { @apply border border-line p-5 md:border-b md:border-x-0 md:border-t-0 md:p-5 lg:p-6; }
+  .home-news-grid > a > div { @apply min-h-full border border-line p-5 md:border-b md:border-x-0 md:border-t-0 md:p-5 lg:p-6; }
   .home-news-grid h3 { @apply mt-0 text-base leading-snug md:text-lg; }
-  .home-news-grid > a span:last-child { @apply mt-4 w-fit bg-ink px-3 py-2 text-xs font-black uppercase tracking-wide text-white no-underline transition group-hover:bg-rosebrand; }
+  .home-news-grid > a span:last-child { @apply mt-auto w-fit bg-ink px-3 py-2 text-xs font-black uppercase tracking-wide text-white no-underline transition group-hover:bg-rosebrand; }
   .overlay-card { @apply relative min-h-[380px] overflow-hidden bg-ink text-white shadow-soft md:min-h-[420px]; }
   .overlay-card > div:first-child { @apply absolute inset-0 h-full rounded-none; }
   .overlay-card img { @apply h-full w-full bg-blush object-cover brightness-[.72]; }
