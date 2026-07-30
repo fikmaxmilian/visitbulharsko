@@ -1,0 +1,13 @@
+---
+import { withBase } from '../utils/paths';
+
+const {
+  href = 'https://www.mojenemovitostumore.cz/nemovitosti?country_id=146&relation_type=1&do=advertList-searchForm-submit&aff=l4todz91fb',
+  image = '/uploads/2025/01/kupte-si-svuj-apartman-1.webp',
+  alt = 'Apartmány v Bulharsku již od 1 200 000 Kč',
+  label = 'Reklamní banner – apartmány v Bulharsku',
+} = Astro.props;
+---
+<a href={href} class="promo-banner" rel="sponsored nofollow" aria-label={label}>
+  <img src={withBase(image)} alt={alt} loading="lazy" decoding="async" />
+</a>

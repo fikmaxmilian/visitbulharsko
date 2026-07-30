@@ -40,6 +40,8 @@
   .ad-slot .adsbygoogle { @apply relative z-10 w-full; }
   .ad-wide { @apply min-h-32 bg-white text-plum/50; }
   .ad-box { @apply min-h-64; }
+  .promo-banner { @apply block overflow-hidden border border-line bg-white shadow-soft transition hover:-translate-y-0.5 hover:shadow-lg; }
+  .promo-banner img { @apply block h-auto w-full; }
   .newsletter-box { @apply border border-line bg-white p-5 shadow-soft md:p-6; }
   .newsletter-input { @apply w-full border border-line bg-blush px-4 py-3 outline-none focus:border-rosebrand; }
   .newsletter-btn { @apply bg-ink px-5 py-3 font-semibold text-white hover:bg-rosebrand; }
