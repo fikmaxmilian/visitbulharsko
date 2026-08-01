@@ -1,13 +1,14 @@
 ---
 import { withBase } from '../utils/paths';
 
-const { post, variant = 'card', overlay = false } = Astro.props;
+const { post, variant = 'card', overlay = false, hideImage = false } = Astro.props;
 const img = post.featured_image || '/uploads/2023/07/header-image-2-1.webp';
 const cat = post.categories?.[0];
+const showImage = variant !== 'text' && !hideImage;
 const date = post.date ? new Date(post.date).toLocaleDateString('cs-CZ', { day: 'numeric', month: 'numeric', year: 'numeric' }) : '';
 ---
 <a href={withBase(post.path)} class:list={['group flex h-full flex-col', !overlay && variant !== 'text' && 'border border-line bg-white', variant === 'compact' && 'compact-card', overlay && 'overlay-card']}>
-  {variant !== 'text' && (
+  {showImage && (
     <div class="overflow-hidden bg-[#d8d0d2]">
       <img src={withBase(img)} alt={post.featured_alt || post.title} class:list={['h-52 w-full object-cover transition duration-500 group-hover:scale-105 md:h-56', variant === 'hero' && 'h-[300px] md:h-[330px]', variant === 'mini' && 'h-28']} loading="lazy" />
     </div>

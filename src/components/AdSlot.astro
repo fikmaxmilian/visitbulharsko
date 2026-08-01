@@ -28,6 +28,16 @@ const adTypes = {
       'data-full-width-responsive': 'true',
     },
   },
+  square: {
+    slot: '8572740100',
+    label: 'ADS / čtvercová reklama',
+    className: 'ad-square',
+    style: 'display:block',
+    attrs: {
+      'data-ad-format': 'auto',
+      'data-full-width-responsive': 'true',
+    },
+  },
   feed: {
     slot: '5051317555',
     label: 'ADS / in-feed reklama',
@@ -64,7 +74,7 @@ type AdType = keyof typeof adTypes;
 const aliases: Record<string, AdType> = {
   banner: 'horizontal',
   wide: 'horizontal',
-  box: 'vertical',
+  box: 'square',
   sidebar: 'vertical',
   inFeed: 'feed',
   inArticle: 'article',

@@ -10,6 +10,7 @@ export function getStaticPaths() {
 }
 const { category } = Astro.props;
 const posts = data.posts.filter((p) => p.categories?.some((c) => c.slug === category.slug));
+const isNewsCategory = category.slug === 'zpravy-bulharsko';
 const categoryTitle = category.seoTitle || `${category.name} v Bulharsku | Visit Bulharsko`;
 const categoryDescription = category.description || `Články v kategorii ${category.name}: praktické informace, zajímavosti a tipy pro cestování po Bulharsku.`;
 ---
@@ -20,7 +21,7 @@ const categoryDescription = category.description || `Články v kategorii ${cate
     <div class="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {posts.map((p, index) => (
         <>
-          <PostCard post={p} />
+          <PostCard post={p} hideImage={isNewsCategory} />
           {index === 2 && <div class="md:col-span-2 lg:col-span-3"><AdSlot type="feed" label="ADS / in-feed reklama" /></div>}
         </>
       ))}

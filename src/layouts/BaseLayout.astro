@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import data from '../data/site-data.json';
-import AdSlot from '../components/AdSlot.astro';
 import { absoluteUrl, canonicalUrl, withBase } from '../utils/paths';
 
 interface Props {
@@ -108,7 +107,7 @@ const homeUrl = withBase('/');
           <div><h3>O nás</h3><p>Visit Bulharsko je český magazín o cestování, kultuře, zprávách a praktickém životě v Bulharsku.</p></div>
           <div><h3>Kdo jsme</h3><a href={withBase('/o-nas/')}>Kdo jsme?</a><a href={withBase('/kontakt/')}>Kontakt</a><a href={withBase('/inzerce-na-webu/')}>Inzerce na webu</a></div>
           <div><h3>Povinné odkazy</h3><a href={withBase('/ochrana-osobnich-udaju/')}>Ochrana osobních údajů</a><a href={withBase('/sitemap.xml')}>Sitemap</a></div>
-          <div><h3>Sleduj nás</h3><p>Facebook · Youtube · Instagram</p><div class="mt-4"><AdSlot type="box" label="ADS / reklamní prostor" /></div></div>
+          <div><h3>Sleduj nás</h3><p>Facebook · Youtube · Instagram</p></div>
         </div>
         <p class="mt-10 text-xs text-plum/70">© {new Date().getFullYear()} Visit Bulharsko. Český magazín o cestování, životě a zajímavostech z Bulharska.</p>
       </div>

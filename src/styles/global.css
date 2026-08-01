@@ -40,6 +40,7 @@
   .ad-slot .adsbygoogle { @apply relative z-10 w-full; }
   .ad-wide { @apply min-h-32 bg-white text-plum/50; }
   .ad-box { @apply min-h-64; }
+  .ad-square { @apply aspect-square min-h-0 w-full max-w-[340px] self-start justify-self-start bg-white text-plum/50; }
   .ad-feed { @apply min-h-40 bg-white text-plum/50; }
   .ad-article { @apply min-h-48 bg-white text-plum/50; }
   .ad-multiplex { @apply min-h-72 bg-white text-plum/50; }
